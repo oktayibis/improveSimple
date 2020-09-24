@@ -1,0 +1,1 @@
+export const GET_VERTICAL_IMAGES = '@GET_VERTICAL_IMAGES';
