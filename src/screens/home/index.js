@@ -41,7 +41,7 @@ const flatListFooter = () => (
 );
 const Index = () => {
   return (
-    <View style={styles.main}>
+    <View testID="testOne" style={styles.main}>
       <NewArrival footer={flatListFooter} header={flatListHeader} />
     </View>
   );
