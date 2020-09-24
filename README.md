@@ -1,3 +1,5 @@
-# improveSimple
+# Improver Digital Simple Project
 
-this is interview project for improve techs
+This simple project developed for Improver Digital Case Study.
+
+
