@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Margins} from '../../constant/theme';
+import {Colors, FontSizes, Margins} from '../../constant/theme';
 
 export const styles = StyleSheet.create({
   category: {
@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
   },
   main: {
     marginHorizontal: Margins.marginHorizantal,
-    flex: 1,
     paddingVertical: 10,
     backgroundColor: 'white',
   },
@@ -22,5 +21,20 @@ export const styles = StyleSheet.create({
   },
   newsletter: {
     marginHorizontal: Margins.marginHorizantal,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: 5,
+    marginVertical: Margins.marginHorizantal,
+  },
+  title: {
+    fontWeight: '600',
+    fontSize: FontSizes.regular,
+  },
+  link: {
+    color: Colors.softRed,
+    fontWeight: '600',
+    fontSize: FontSizes.regular,
   },
 });

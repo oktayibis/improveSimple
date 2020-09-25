@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
-import {Colors} from '../../../constant/theme';
+import {Colors, FontSizes, Margins} from '../../../constant/theme';
 import {useSelector} from 'react-redux';
 
 import BrandCard from '../../../components/BrandCard';
@@ -29,16 +29,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 5,
-    marginVertical: 10,
-    marginTop: 20,
+    marginVertical: Margins.marginHorizantal,
+    marginTop: Margins.marginLeft * 2,
   },
   title: {
     fontWeight: '600',
-    fontSize: 14,
+    fontSize: FontSizes.regular,
   },
   link: {
     color: Colors.softRed,
     fontWeight: '600',
-    fontSize: 14,
+    fontSize: FontSizes.regular,
   },
 });

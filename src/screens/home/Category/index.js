@@ -13,12 +13,14 @@ const Index = () => {
   );
   const dispatch = useDispatch();
 
+  // Call inital data
   const getCategries = useCallback(() => {
     dispatch(getCategoriesAction(InitialCategories));
-  }, []);
+  }, [dispatch]);
+
   useEffect(() => {
     getCategries();
-  }, []);
+  }, [getCategries]);
 
   return (
     <View style={styles.navContainer}>
