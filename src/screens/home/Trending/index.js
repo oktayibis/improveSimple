@@ -3,24 +3,22 @@ import {View, Text, StyleSheet} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {getTrandListAction} from '../../../appState/trending/actions';
-import {
-  initalArrivalData,
-  initialTrendingData,
-} from '../../../constant/initialData';
+import {initalArrivalData} from '../../../constant/initialData';
 
 import TrendCard from '../../../components/TrendCard';
-import {Colors} from '../../../constant/theme';
+import {Colors, FontSizes, Margins} from '../../../constant/theme';
+
 const Index = () => {
   const dispatch = useDispatch();
   const {trendingList} = useSelector((state) => state.trendList);
 
-  const setItems = useCallback(() => {
+  const setTrandingList = useCallback(() => {
     dispatch(getTrandListAction(initalArrivalData));
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
-    setItems();
-  }, []);
+    setTrandingList();
+  }, [setTrandingList]);
 
   return (
     <View>
@@ -44,15 +42,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 5,
-    marginVertical: 10,
+    marginVertical: Margins.marginHorizantal,
   },
   title: {
     fontWeight: '600',
-    fontSize: 14,
+    fontSize: FontSizes.regular,
   },
   link: {
     color: Colors.softRed,
     fontWeight: '600',
-    fontSize: 14,
+    fontSize: FontSizes.regular,
   },
 });

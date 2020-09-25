@@ -8,9 +8,10 @@ import NewArrival from './NewArrival';
 import Newsletter from './Newsletter';
 import Category from './Category';
 import Trending from './Trending';
-import {Colors, Margins} from '../../constant/theme';
+import {Colors} from '../../constant/theme';
 import {styles} from './home.styles';
 
+// This is render before flatlist for improve performance issues and avoid vituarilized error.
 const flatListHeader = () => (
   <>
     <View style={styles.category}>
@@ -19,13 +20,14 @@ const flatListHeader = () => (
     <View style={styles.verticalImage}>
       <VerticalImage />
     </View>
-    <View style={styles2.header}>
-      <Text style={styles2.title}>New Arrival</Text>
-      <Text style={styles2.link}>Show All</Text>
+    <View style={styles.header}>
+      <Text style={styles.title}>New Arrival</Text>
+      <Text style={styles.link}>Show All</Text>
     </View>
   </>
 );
 
+// This part render after flatlist
 const flatListFooter = () => (
   <>
     <View style={styles.trending}>
@@ -39,6 +41,8 @@ const flatListFooter = () => (
     </View>
   </>
 );
+
+// Home page render: This is handle performance issues and avoid nested flatlist errors.
 const Index = () => {
   return (
     <View testID="testOne" style={styles.main}>
@@ -48,21 +52,3 @@ const Index = () => {
 };
 
 export default Index;
-
-const styles2 = StyleSheet.create({
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    margin: 5,
-    marginVertical: 10,
-  },
-  title: {
-    fontWeight: '600',
-    fontSize: 14,
-  },
-  link: {
-    color: Colors.softRed,
-    fontWeight: '600',
-    fontSize: 14,
-  },
-});

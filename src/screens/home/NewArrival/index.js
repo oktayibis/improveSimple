@@ -12,15 +12,17 @@ const Index = (props) => {
   const {newList, newListLoading} = useSelector(
     (state) => state.newArrivalList,
   );
+
   const getArrivals = useCallback(() => {
     dispatch(getNewArrivalAction(initalArrivalData));
-  }, []);
+  }, [dispatch]);
+
   useEffect(() => {
     getArrivals();
-  }, []);
+  }, [getArrivals]);
+
   return (
     <View>
-  
       <View>
         {newListLoading ? (
           <Text>Loading</Text>
@@ -41,5 +43,3 @@ const Index = (props) => {
 };
 
 export default Index;
-
-

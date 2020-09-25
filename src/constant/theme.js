@@ -7,3 +7,11 @@ export const Margins = {
   marginLeft: 10,
   marginHorizantal: 10,
 };
+
+export const FontSizes = {
+  small: 10,
+  regular: 14,
+  bigger: 16,
+  large: 20,
+  huge: 24,
+};
